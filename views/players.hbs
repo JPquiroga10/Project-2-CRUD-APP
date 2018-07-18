@@ -1,0 +1,20 @@
+
+
+  {{!-- <input class="search" placeholder="Search" />
+  <button class="sort">
+    Sort
+  </button> --}}
+
+{{#each listOfPlayers}}
+
+<div>
+
+<p>{{this.Player}} {{this.Position}} {{this.Team}}</p>
+<a href="/players/{{this._id}}">View 2018 Player Projections</a>
+
+</div>
+
+<hr>
+
+
+{{/each}}
