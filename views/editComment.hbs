@@ -1,0 +1,20 @@
+
+{{thePlayer.Player}}
+
+{{thePlayer.Position}}
+
+{{thePlayer.Team}} 
+
+<form action="/players/{{player._id}}/comments/update" method="post">
+
+
+    <label for="commenter">User</label>
+    <input type="text" id="commenter" name="commenterF">
+
+    {{!-- label without a for attribute, cannot click on the words --}}
+    <label>What Do You Have To Say?</label>
+    <textarea name="contentF" cols="30" rows="10"></textarea>
+
+    <button type="submit">Post It</button>
+
+</form>

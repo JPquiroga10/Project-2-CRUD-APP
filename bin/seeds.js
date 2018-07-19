@@ -5,6 +5,8 @@ const Player = require('../models/player');
 const dbName = 'Fantasy-FootBall-Draft'
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
+// mongoose.connect(process.env.MONGODB_URI);
+
 
 
 const players = [

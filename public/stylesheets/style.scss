@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+.navbar {
+  // height: 100%;
+  width: 100%;
+  // background-size: contain;
+  background-color:white;
+  display: flex;
+  justify-content: flex-start;
+}

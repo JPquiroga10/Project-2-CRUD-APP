@@ -20,11 +20,12 @@ const ensureLogin   = require('connect-ensure-login');
 
 
 const User         = require('./models/user');
+const Player       = require('./models/player');
 
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/Fantasy-FootBall-Draft', {useMongoClient: true})
+  .connect(process.env.MONGODB_URI, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -111,6 +112,9 @@ app.use('/', authRoutes);
 
 const playerRoutes = require('./routes/playerRoutes');
 app.use('/', ensureLogin.ensureLoggedIn(), playerRoutes);
+
+const commentRoutes = require('./routes/commentRoutes');
+app.use('/', ensureLogin.ensureLoggedIn(), commentRoutes);
 
 
 

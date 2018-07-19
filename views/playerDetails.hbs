@@ -77,5 +77,23 @@
 {{/if}}
 <hr>
 
+<a href="/players/{{thePlayer._id}}/comments/new">Add a Comment for This Player</a>
+
+<div>
+    <h2>Comments for This Player</h2>
+    {{#each thePlayer.comments}}
+    <h4>{{this.commenter}}</h4>
+    <p>{{this.content}}</p>
+
+    <a href="/players/{{../thePlayer._id}}/comments/edit">Edit This Comment</a>
+
+    
+    <form action="/players{{../thePlayer._id}}/comments/delete/{{@index}}" method="post">
+        <button>Delete This Comment</button>
+    </form>
+    <hr>
+    {{/each}}
+</div>
+
 
 

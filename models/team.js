@@ -5,14 +5,12 @@ const Schema   = mongoose.Schema;
 
 
 const teamSchema = new Schema({
-   QB: String,
-   RB1: String,
-   RB2: String,
-   WR1: String,
-   WR2: String,
-   flex: String,
-   DST: String,
-   K: String,
+   QB:  { type : ObjectId, ref: 'Player' } ,
+   RB:  [ { type : ObjectId, ref: 'Player' } ],
+   WR:  [{ type : ObjectId, ref: 'Player' } ],
+   TE:  { type : ObjectId, ref: 'Player' } ,
+   DST: { type : ObjectId, ref: 'Player' } ,
+   K:  { type : ObjectId, ref: 'Player' } ,
 
 });
 

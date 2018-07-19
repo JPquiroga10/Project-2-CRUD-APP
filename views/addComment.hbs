@@ -1,0 +1,13 @@
+<h1>{{thePlayer.Player}}</h1>
+
+<form action="/players/{{player._id}}/comments/create" method="post">
+    <label for="commenter">User</label>
+    <input type="text" id="commenter" name="commenter">
+
+    {{!-- label without a for attribute, cannot click on the words --}}
+    <label>What Do You Have To Say?</label>
+    <textarea name="content" cols="30" rows="10"></textarea>
+
+    <button type="submit">Post It</button>
+
+</form>

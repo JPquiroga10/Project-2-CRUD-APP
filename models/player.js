@@ -31,7 +31,8 @@ const playerSchema = new Schema({
     FGA: String,
     XPT: String,
     FL: String,
-    FPTS: String
+    FPTS: String,
+    comments: [{commenter: String, content: String}]
 });
 
 const Player = mongoose.model("Player", playerSchema);
