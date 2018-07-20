@@ -1,43 +1,42 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('IronGenerator JS imported successfully!');
-}, false);
+const playerPosition = ["QB","RB","WR","TE","DST","K"];
 
 // yuor main constructor function 
 function Draft(teamArr) {
-  const draftTeam = [];
-  var qBArray =[];
-  var rBArray =[];
-  var wRarray =[];
-  var tEArray =[];
-  var dsTArray =[];
-  var kArray =[];
-  // const playerPosition = ["QB","RB","WR","TE","DST","K"];
+  this.draftTeam = teamArr;
+  this.qBArray =[];
+  this.rBArray =[];
+  this.wRarray =[];
+  this.tEArray =[];
+  this.dsTArray =[];
+  this.kArray =[];
+  
 }
 
 
 //method that split your players
-Draft.prototype.teamSpliter = (teamArr)=>{
-  teamArr.forEach((player) => {
+Draft.prototype.teamSpliter = ()=>{
+  this.draftTeam.forEach((player) => {
+    console.log('what is position: ', player)
 //  loop through array to plit players into to ech player postion
 switch(player.position) {
   case 'QB':
-      qBArray.push(player)
+      this.qBArray.push(player)
       break;
    case 'RB':
-      rBArray.push(player)
+      this.rBArray.push(player)
       break;
   case 'WR':
-      wRArray.push(player)
+      this.wRArray.push(player)
       break;
   case 'TE':
-      teArray.push(player)
+      this.teArray.push(player)
       break;
  case 'DST':
-      dsTArray.push(player)
+      this.dsTArray.push(player)
       break;
  case 'K':
-      kArray.push(player)
+      this.kArray.push(player)
       break;
   default:
       
@@ -80,10 +79,15 @@ drafTeam.push(wRArray.splice[0,2])
 
 
 // creating a new instans of Draf constructor funtion
-var getMyTeam = new Draft(arrayofplayer)
+// var getMyTeam = new Draft(arrayofplayer)
 
 // push ypur dudes to this array  draftTeam
 // on your click funtion to get a random team yo call getMyTeam 
-getMyteam(arry)
+// getMyTeam(arry);
   
 
+
+function getMyTeam(arryOfPLayers){
+  var theDRAFT = new Draft(arryOfPLayers);
+  theDRAFT.teamSpliter();
+}

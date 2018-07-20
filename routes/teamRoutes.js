@@ -7,12 +7,10 @@ const ensureLogin = require("connect-ensure-login");
 teamRouter.get('/team', (req, res, next) => {
     Team.find()
     .then((listOfteams)=>{
-        console.log("got a team");
-        res.render('draftsimPage', {listOfteams});
+        console.log('what: ', listOfteams)
+        res.render('draftsimPage', { listOfteams });
     })
-    .catch((err)=>{
-console.log(err)
-    })
+    .catch( err => next(err))
 })
 
 

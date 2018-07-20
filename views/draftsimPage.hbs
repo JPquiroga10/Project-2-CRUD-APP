@@ -1,6 +1,10 @@
 
-<button class="draft">Draft Random Teams</button>
-{{#each listOfteams}}
+<h2>Draft Teams Now</h2>
+<p>Hit the "Get a Team" button randomly selcted a fantasy team. Continue to click to find teams that you prefer.</p>
+
+
+<button class="draft-btn btn btn-success"onclick="getMyTeam({{playerPosition}})" >Get a Team</button>
+{{#each playerPosition}}
     {{this.QB}}
     {{this.RB}}
     {{!-- {{this.RB}} --}}
