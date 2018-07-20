@@ -1,14 +1,26 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  padding: 20px;
+  font-family: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  text-align: center;
+  background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/5LTJsFT/football-stadium-background-animation_4kiej7gr__F0000.png");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+ul a {
+  text-decoration: none;
+  padding: 20px; }
 
 a {
-  color: #00B7FF; }
+  color: black; }
 
 .navbar {
-  width: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: flex-start; }
+  background-color: lightgrey; }
+
+.container {
+  background-color: lightgrey;
+  border: lightgray;
+  border-radius: 5px;
+  margin-top: 26px; }
 
 /*# sourceMappingURL=style.css.map */

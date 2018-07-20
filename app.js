@@ -65,7 +65,7 @@ app.use(session({
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Fantasy Football Ultimate Draft Kit';
 
 
 passport.serializeUser((user, cb) => {

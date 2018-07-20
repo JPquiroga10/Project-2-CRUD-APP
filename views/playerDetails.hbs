@@ -1,9 +1,11 @@
+
+<div class="container">
 <hr>
-{{thePlayer.Player}}
+<h2>{{thePlayer.Player}}
 
 {{thePlayer.Position}}
 
-{{thePlayer.Team}} 
+{{thePlayer.Team}} </h2>
 <hr>
 <h2>2018 Stat Projections</h2>
 {{#if thePlayer.passAtt.length}}
@@ -79,8 +81,9 @@
 
 <a href="/players/{{thePlayer._id}}/comments/new">Add a Comment for This Player</a>
 
-<div>
+    <div>
     <h2>Comments for This Player</h2>
+    <hr>
     {{#each thePlayer.comments}}
     <h4>{{this.commenter}}</h4>
     <p>{{this.content}}</p>
@@ -93,7 +96,7 @@
     </form>
     <hr>
     {{/each}}
+    </div>
 </div>
-
 
 

@@ -1,9 +1,20 @@
-
+<div class="container">
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+{{!-- <button class="signup-btn" href="/signup">Sign Up</button>
+<button class="login-btn" href="/login">Log In</button> --}}
+<a href= "/signup">
+<button type="button" class="btn btn-success">Sign Up Now</button>
+</a>
+
+<a href="/login">
+<button type="button" class="btn btn-success">Login</button>
+</a>
 
 {{#if theUser}}
 <div>
     {{theUser.username}}
 </div>
 {{/if}}
+</div>
