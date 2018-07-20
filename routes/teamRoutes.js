@@ -14,7 +14,6 @@ teamRouter.get('/team', (req, res, next) => {
 console.log(err)
     })
 })
-  
 
 
 
