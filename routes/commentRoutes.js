@@ -39,10 +39,10 @@ commRouter.post('/players/:id/comments/create', (req, res, next) => {
 // })  
 // })
 
-commRouter.get('/players/:id/comments/edit', (req, res, next) => {
+commRouter.get('/players/:id/comments/edit/:commentIndex', (req, res, next) => {
     Player.findById(req.params.id)
     .then((thePlayer)=>{
-        res.render('editComment',{player:thePlayer})
+        res.render('editComment',{player:thePlayer, index: req.params.commentIndex})
     })
     .catch((err)=>{
         next(err)
@@ -52,23 +52,28 @@ commRouter.get('/players/:id/comments/edit', (req, res, next) => {
 })
 
                    
- commRouter.post('/players/:id/comments/update', (req, res, next)=>{
-    Player.findByIdAndUpdate(req.params.id, {
-        
-       commenter: req.body.commenterF,
-       content: req.body.contentF
-     
-    })
-    .then((response) => {
+ commRouter.post('/players/:id/comments/update/:commentIndex', (req, res, next)=>{
+    Player.findById(req.params.id)
+    .then((thePlayer)=>{
+        thePlayer.comments[req.params.commentIndex] = {
+             commenter: req.body.commenterF,
+            content: req.body.contentF
+        }
+        thePlayer.save()
+        .then((response) => {
        
-        res.redirect(`/players/${req.params.id}`)
-    })
-    .catch((err) => {
-console.log('error while tryning to update the comment')
-        next(err)
-    })
+            res.redirect(`/players/${req.params.id}`)
+        })
+        .catch((err) => {
+    console.log('error while tryning to update the comment')
+            next(err)
+        })
 
-});
+    })
+        
+      
+     
+    });
 
 
 
@@ -80,7 +85,7 @@ commRouter.post('/players/:id/comments/delete/:commentIndex', (req, res, next) =
         thePlayerThatImEditing.comments.splice(commentIndex, 1)
         thePlayerThatImEditing.save()
         .then((x)=>{
-            res.redirect('/players'+playerId)
+            res.redirect('/players/'+playerId)
         })
         .catch((err) => {
             next(err)

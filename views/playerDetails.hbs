@@ -85,10 +85,10 @@
     <h4>{{this.commenter}}</h4>
     <p>{{this.content}}</p>
 
-    <a href="/players/{{../thePlayer._id}}/comments/edit">Edit This Comment</a>
+    <a href="/players/{{../thePlayer._id}}/comments/edit/{{@index}}">Edit This Comment</a>
 
     
-    <form action="/players{{../thePlayer._id}}/comments/delete/{{@index}}" method="post">
+    <form action="/players/{{../thePlayer._id}}/comments/delete/{{@index}}" method="post">
         <button>Delete This Comment</button>
     </form>
     <hr>

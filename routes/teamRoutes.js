@@ -1,18 +1,20 @@
 const express = require('express');
-const router  = express.Router();
-const Player    = require('../models/team');
+const teamRouter  = express.Router();
+const Team    = require('../models/team');
 const ensureLogin = require("connect-ensure-login");
 
 
-// teamRouter.get('/draftsimPage', (req, res, next) => {
-//     Player.find()
-//     .then((listOfPlayers)=>{
-//         res.render('players', {listOfPlayers});
-//     })
-//     .catch((err)=>{
-//         next(err); 
-//      })
-// });
+teamRouter.get('/team', (req, res, next) => {
+    Team.find()
+    .then((listOfteams)=>{
+        console.log("got a team");
+        res.render('draftsimPage', {listOfteams});
+    })
+    .catch((err)=>{
+console.log(err)
+    })
+})
+  
 
 
 

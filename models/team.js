@@ -1,16 +1,18 @@
 const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
+const Player = require("./player")
 
 
 
 
 const teamSchema = new Schema({
-   QB:  { type : ObjectId, ref: 'Player' } ,
-   RB:  [ { type : ObjectId, ref: 'Player' } ],
-   WR:  [{ type : ObjectId, ref: 'Player' } ],
-   TE:  { type : ObjectId, ref: 'Player' } ,
-   DST: { type : ObjectId, ref: 'Player' } ,
-   K:  { type : ObjectId, ref: 'Player' } ,
+    
+   QB:  {type: Schema.Types.ObjectId, ref: 'Player'},
+   RB: [{type: Schema.Types.ObjectId, ref: 'Player'}],
+   WR:  [{type: Schema.Types.ObjectId, ref: 'Player'}],
+   TE:  {type: Schema.Types.ObjectId, ref: 'Player'}, 
+   DST: {type: Schema.Types.ObjectId, ref: 'Player'}, 
+   K:   {type: Schema.Types.ObjectId, ref: 'Player'}, 
 
 });
 

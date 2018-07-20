@@ -1,11 +1,11 @@
 
-{{thePlayer.Player}}
+{{player.Player}}
 
-{{thePlayer.Position}}
+{{player.Position}}
 
-{{thePlayer.Team}} 
+{{player.Team}} 
 
-<form action="/players/{{player._id}}/comments/update" method="post">
+<form action="/players/{{player._id}}/comments/update/{{index}}" method="post">
 
 
     <label for="commenter">User</label>

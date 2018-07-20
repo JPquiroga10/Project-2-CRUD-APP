@@ -17,8 +17,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt        = require('bcryptjs');
 const flash         = require('connect-flash');
 const ensureLogin   = require('connect-ensure-login');
-
-
+const Team          = require('./models/team')
 const User         = require('./models/user');
 const Player       = require('./models/player');
 
@@ -114,7 +113,10 @@ const playerRoutes = require('./routes/playerRoutes');
 app.use('/', ensureLogin.ensureLoggedIn(), playerRoutes);
 
 const commentRoutes = require('./routes/commentRoutes');
-app.use('/', ensureLogin.ensureLoggedIn(), commentRoutes);
+app.use('/', commentRoutes);
+
+const teamRoutes = require('./routes/teamRoutes');
+app.use('/', ensureLogin.ensureLoggedIn(), teamRoutes);
 
 
 
