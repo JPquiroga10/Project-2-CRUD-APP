@@ -7,7 +7,7 @@
 
 {{thePlayer.Team}} </h2>
 <hr>
-<h2>2018 Stat Projections</h2>
+<h3>2018 Stat Projections</h3>
 {{#if thePlayer.passAtt.length}}
     <p>Pass Attempts: {{thePlayer.passAtt}}</p>
 {{/if}}    
@@ -82,10 +82,10 @@
 <a href="/players/{{thePlayer._id}}/comments/new">Add a Comment for This Player</a>
 
     <div>
-    <h2>Comments for This Player</h2>
+    <h3>Comments for This Player</h3>
     <hr>
     {{#each thePlayer.comments}}
-    <h4>{{this.commenter}}</h4>
+    <h5>{{this.commenter}}</h5>
     <p>{{this.content}}</p>
 
     <a href="/players/{{../thePlayer._id}}/comments/edit/{{@index}}">Edit This Comment</a>
